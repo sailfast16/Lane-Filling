@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Lane Filling Optimization</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.dom.js"></script>
+    <script src="sketch1.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar bg-dark navbar-dark">
+        <a class="navbar-brand" href="#">Lane Filling Optimization</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#lane_modal">Lane Setup</button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#job_modal">Add Jobs</button>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="view_opt">View Optimal</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+        <!-- Lane Modal -->
+        <div class="modal" id="lane_modal" name="lane_modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Lane Setup</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="lane_num">Number of Lanes:</label>
+                                <input type="number" class="form-control" id="lane_num" name="lane_num">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lane_len">Length of Lanes:</label>
+                                <input type="number" class="form-control" id="lane_len" name="lane_len">
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Save Settings</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Jobs Modal -->
+        <div class="modal" id="job_modal" name="lane_modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Add Jobs</h4>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">&times;</button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="job_len">Job Length:</label>
+                                        <input type="number" class="form-control" id="job_len" name="job_len">
+                                    </div>
+                                    <button type="button" class="btn btn-primary" id="addjob" name=" addJob" style="width: 100px;" onclick="addJob()">Add Job</button>
+                                </div>
+                                <div class="col">
+                                    <select id="jobs" size="20"></select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    <script>
+        var input = document.getElementById("job_len")
+        input.addEventListener("keyup", function (event) {
+            event.preventDefault;
+            if (event.keyCode === 13) {
+                addJob();
+            }
+        })
+    </script>
+
+
+    <script>
+        function addJob() {
+            var x = document.getElementById("jobs");
+            var len = document.getElementById("job_len")
+            var option = document.createElement("option");
+            if (len.value != "") {
+                option.text = len.value;
+                x.add(option);
+            }
+            len.value = ""
+        }
+    </script>
+
+</body>
+
+</html>
