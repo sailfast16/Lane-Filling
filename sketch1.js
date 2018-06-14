@@ -19,8 +19,8 @@ var TitleBoxHeightFactor = .05; // these three relative factors must total 1
 var ScoreBoxHeightFactor = .1;  //relative height of the score box
 
 //First set the size of the Canvas relative to the screen.
-var BigBoxWidth = .95*windowWidth;
-var BigBoxHeight = .95*windowHeight;
+var BigBoxWidth = .95*screen.width;
+var BigBoxHeight = .95*screen.height;
 
 //Definitions for title box
 var TitleBoxWidth = BigBoxWidth - 2*MarginX;
