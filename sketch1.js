@@ -10,7 +10,7 @@
 //     | Big Box
 //     |         
 //Set margins here
-var MarginX = 10;
+var MarginX = 8;
 var MarginY = 10;
 var BoxRadius =10;
 var MsgBoxHeightFactor = .15;  // relative height of the message box.
