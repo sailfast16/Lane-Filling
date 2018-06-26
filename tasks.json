@@ -1,0 +1,43 @@
+{
+  "lanes": [{
+      "name": "",
+      "tasks": [], //tasks currently in the lane (this is what the optimization step will change)
+      "attributes": "" //ie. cost or possibly something else 
+    },
+    {
+      "name": "",
+      "tasks": [],
+      "attributes": ""
+    }
+  ],
+
+  "tasks": [{
+      "ID": "",
+      "description": "",
+      "length": "",
+      "startDate": "",
+      "dependancies": [], // other task ID's  
+      "constraints": {
+          "deadline": "", //date 
+          "split": "", //y/n or time (0,length)
+          "fixed": "", // y/n  (tasks in progress will be fixed by default)
+          "fixed-range": "" //range if yes 
+      }
+
+    },
+    {
+      "ID": "",
+      "description": "",
+      "length": "",
+      "startDate": "",
+      "dependancies": [],
+      "constraints": {
+          "deadline": "",
+          "split": "",
+          "fixed": "",
+          "fixed-range": ""
+      }
+
+    }
+  ]
+}
