@@ -1,0 +1,31 @@
+[
+  {
+    "ID": 1,
+    "description": "Task 1",
+    "length": "30",
+    "startDate": "0",
+    "lane": 0,
+    "dependancies": [],
+    "constraints": {
+      "deadline": "",
+      "split": "",
+      "fixed": "", 
+      "fixed-range": "" 
+    }
+  },
+
+  {
+    "ID": 2,
+    "description": "Task 2",
+    "length": "50",
+    "startDate": "30",
+    "lane": 1,
+    "dependancies": [0],
+    "constraints": {
+      "deadline": "",
+      "split": "",
+      "fixed": "",
+      "fixed-range": ""
+    }
+  }
+]
